@@ -1,5 +1,4 @@
 import requests
-from time import sleep
 
 print("--> Sending a GET request to localhost on port 8000...")
 
