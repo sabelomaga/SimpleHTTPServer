@@ -1,4 +1,4 @@
 import os
 
 # Print current working directory
-os.getcwd()
+print(os.getcwd())
