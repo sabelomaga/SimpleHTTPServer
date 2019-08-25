@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3.6"
 services:
   http_server:
     container_name: simple-http-server-container
