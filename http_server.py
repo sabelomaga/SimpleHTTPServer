@@ -17,10 +17,9 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         return
 
 try:
-    httpd = HTTPServer(("localhost", PORT_NUMBER), SimpleHTTPRequestHandler)
-    print("* Simple HTTP server")
+    httpd = HTTPServer(("", PORT_NUMBER), SimpleHTTPRequestHandler)
+    print("* Simple HTTP Server")
     print("* Serving at port", PORT_NUMBER)
-    print("* Running on http://127.0.0.1:"+str(PORT_NUMBER)+"/ (Press CTRL+C to quit)")
     httpd.serve_forever()
 
 except KeyboardInterrupt:

@@ -1,0 +1,8 @@
+version: "3.7"
+services:
+  http_server:
+    container_name: simple-http-server-container
+    restart: always
+    build: .
+    ports:
+      - "8000:8000"
