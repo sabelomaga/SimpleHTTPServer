@@ -3,7 +3,7 @@ from time import sleep
 
 # Wait a few seconds before sending the request.
 print("--> Sending a GET request to localhost on port 8000...")
-sleep(5)
+# sleep(5)
 
 try:
     r = requests.get('http://localhost:8000')
