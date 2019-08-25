@@ -1,2 +1,2 @@
 # SimpleHTTPServer
-A simple HTTP server implementation
+A simple HTTP server implementation.
