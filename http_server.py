@@ -20,6 +20,7 @@ try:
     httpd = HTTPServer(("", PORT_NUMBER), SimpleHTTPRequestHandler)
     print("* Simple HTTP Server")
     print("* Serving at port", PORT_NUMBER)
+    print("* Press CTRL+C to quit")
     httpd.serve_forever()
 
 except KeyboardInterrupt:
