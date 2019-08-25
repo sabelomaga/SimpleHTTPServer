@@ -13,6 +13,7 @@ try:
         exit(1)    
     else:
         print("--> Status code is:", r.status_code)
+        print("--> Content:", r.text)
         print("--> Test succeeded!")
         exit(0)
 except Exception as e:
