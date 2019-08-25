@@ -1,15 +1,23 @@
 language: python
 python:
-  - "3.6"
+- '3.6'
 services:
-  - docker
+- docker
 env:
+  matrix:
   - DOCKER_COMPOSE_VERSION=3.7.3
+  - secure: QloU4yUgr+yBUPr05CmbS/iLOtVNMO5snoL9GtOSlK651I/InDR9un98GbuQ4OxGTpidggzb8/o+50y3zJ5P2hHrvjxQxbJVoykgdDp2O0pisaU6hOtjSHC4eHpd5mZqqqfGiJGQXJzuLiVKSR0wzYaomEH5+LClN7q9b9rufgnM3+A1PAzsnKnaQgbtmkSgxJJsDhNKeAkVSB5CAShXtUOhKqn4U2RHcN+WV62CeekaxVcvRTSZRUdP7XO3CemrULAYKtbIa0Fph4xCGqvOpAJXqWnvFaY3vmAFEt9hG992SfebOxPuvsGCV+Oep/HRPd2t5Cd5i2V72gFh5YKa9o2Tohs3TZGXvgn0hLMDW0VY6Gy0uv9yPv/jYSjudb+T1NS9fEa9V2gT0yvM64MV6zlbVVcxwmIwcyygBjdLHtIs/XUzWOM+j30nmMGyS5XmOn10HqWZojIJZql7xduky/xlo5WAR99jAdKLrS/zV/7uLZ1Dwjnsx+ZT5Z4huBNXlba5PJUj2QEJCKewfBYVVTHdUNpTfq3IEEFhG2socuPnPpDbcLEwP8YvToZuE1pWlWvSHxeqC8rod3VWB8dtfZvmP9UnaY8MGO6adHDfShnJN19z/RB9z4lhIRDdHSFTiN9e0JfEVp11RAObHB4EAOvZRkDmp4F3DCafm5xXivU=
+  - secure: CzI8ALaKY47qVh7rFylS9PeYTwvIdTXP+qsMZYIes7vwtbNJUpK0J/XFMA2OQxur/O9trNDgfik6csgFTEORB6g+pIU4HsikrISt/mnO5VY3InO6kbofsY5TqZY08vgYH9Rd1wYthKeoOCs3p2DzbOcU+eTCT0ODf6TAm4S3eFtXZ6zqed8wAM1yqftfp6rANeXUkZEycXsbZWlc0mClZD8wkaLWzwL3jKSe0NNT5jijGbQOjKIpnsZ1wmvcmGj+vfdd3YogUjsQEl8gwzBa3qxDyL4ThUJs2wwcWrXAczJo5kAK0ylZN7fmkkYaOxZSaSMHJ+/0/eAD567T2xZWQF6ER4yEAEUEYMoKQzJ+zCxjmkEKiHpyPD1BgPIv18optOUmRS+DknnJl7Ikwi1VJD/3Q78k4xAg4wU29aNQTpkySw2UVT7fh4VRqPINFXzNwNbWeV+Wn7uXUGW+E/HZ/IsuPrdP6NsJOiI1y352TDCHWvCqOKbSwzZ1po09BAUKLx3rY4h+Mt1863UwwKl9jpZ7NW+xIGSCeg1u0P7G8UaPLhzeWhlvWxQFknDFmDO61dN+lzc0zpxRSH+ZGtKGIvRAh9hcDIuxK9hLSin566++NREjqawi+WX58fzH13bCRsA9JUrh14NBOnWRObiPIDSk00YoF1VGxhdsaXVUYg8=
 install:
-  - pip install -r requirements.txt
+- pip install -r requirements.txt
 before_script:
-  - docker-compose up --build -d
+- docker-compose up --build -d
 script:
-  - python test_script.py
+- python test_script.py
 after_script:
-  - docker-compose down
+- docker-compose down
+deploy:
+  provider: script
+  script: bash docker_push
+  on:
+    branch: master
