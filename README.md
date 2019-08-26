@@ -8,7 +8,7 @@ A simple HTTP server implementation.
 
 ### Instructions ###
 
-You can run the HTTP server locally (on your computer) or on a Docker container. Please see blow examples:
+You can run the HTTP server locally (on your computer) or on a Docker container. Please see below examples:
 
 #### To run it locally (on your computer): ####
 
