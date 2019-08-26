@@ -10,8 +10,13 @@ A simple HTTP server implementation.
 
 You can run the HTTP server locally (on your computer) or on a Docker container. Please see blow examples:
 
-- $ python http_server.py (To run it locally)
-- $ docker-compose up (To run it on a Docker container)
+#### To run it locally (on your computer:) ####
+
+- $ python http_server.py
+
+#### To run it on a Docker container:) ####
+
+- $ docker-compose up
 
 ### Testing ###
 
